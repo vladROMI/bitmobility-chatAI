@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Preview Agentforce</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://pisajazz.it/wp-content/uploads/2024/10/bit-1-768x576.png" alt="Logo Azienda" class="logo">
+    <div class="title">TEST Agentforce</div>
+
+    <!-- Start Snippet Salesforce -->
+    <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DKB0000014aXF',
+				'Web_DEMO',
+				'https://pianidibobbio.my.site.com/ESWWebDEMO1760449931371',
+				{
+					scrt2URL: 'https://pianidibobbio.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://pianidibobbio.my.site.com/ESWWebDEMO1760449931371/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<!-- End Snippet Salesforce --> 
+  
+</body>
+</html>
