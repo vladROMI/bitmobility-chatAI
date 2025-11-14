@@ -1,242 +1,63 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BitMobility - Assistenza Agentforce</title>
+    <title>Preview Agentforce</title>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
             text-align: center;
-            animation: fadeIn 0.6s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .logo {
             max-width: 250px;
             height: auto;
-            margin-bottom: 30px;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            margin-bottom: 20px;
         }
 
         .title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-        }
-
-        .subtitle {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .info-box {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .info-box h3 {
-            font-size: 14px;
-            color: #667eea;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .info-box ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .info-box li {
-            font-size: 13px;
-            color: #555;
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .info-box li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #667eea;
+            font-size: 22px;
             font-weight: bold;
-        }
-
-        .footer {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-            font-size: 12px;
-            color: #999;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            .title {
-                font-size: 24px;
-            }
-
-            .subtitle {
-                font-size: 14px;
-            }
-
-            .logo {
-                max-width: 200px;
-            }
-        }
-
-        /* Pulsante Chat personalizzato (opzionale) */
-        .chat-cta {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .chat-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
-
-        .chat-cta:active {
-            transform: translateY(0);
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://pisajazz.it/wp-content/uploads/2024/10/bit-1-768x576.png" 
-             alt="BitMobility Logo" 
-             class="logo">
-        
-        <h1 class="title">Assistenza BitMobility</h1>
-        <p class="subtitle">
-            Benvenuto nel nostro sistema di supporto intelligente. 
-            Il nostro assistente virtuale è qui per aiutarti 24/7.
-        </p>
+    <img src="https://pisajazz.it/wp-content/uploads/2024/10/bit-1-768x576.png" alt="Logo Azienda" class="logo">
+    <div class="title">TEST Agentforce</div>
 
-        <!-- Bottone opzionale per aprire la chat -->
-        <!-- <button class="chat-cta" onclick="openChat()">💬 Avvia Chat</button> -->
+    <!-- Start Snippet Salesforce -->
+   <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
 
-        <div class="info-box">
-            <h3>Come possiamo aiutarti:</h3>
-            <ul>
-                <li>Problemi con i noleggi</li>
-                <li>Informazioni su pagamenti e rimborsi</li>
-                <li>Segnalazioni e assistenza mezzi</li>
-                <li>Supporto tecnico app/account</li>
-                <li>Informazioni sul servizio</li>
-            </ul>
-        </div>
+			embeddedservice_bootstrap.init(
+				'00DfZ0000006gNx',
+				'Web',
+				'https://bitmobility--partial.sandbox.my.site.com/ESWWeb1761645243099',
+				{
+					scrt2URL: 'https://bitmobility--partial.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://bitmobility--partial.sandbox.my.site.com/ESWWeb1761645243099/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
-        <div class="footer">
-            Powered by Salesforce Agentforce | © 2025 BitMobility
-        </div>
-    </div>
 
-    <!-- ============================================ -->
-    <!-- Salesforce Embedded Messaging Snippet START -->
-    <!-- ============================================ -->
-    <script type='text/javascript'>
-        function initEmbeddedMessaging() {
-            try {
-                // Configurazione lingua italiana
-                embeddedservice_bootstrap.settings.language = 'it';
-
-                // Personalizzazioni opzionali
-                embeddedservice_bootstrap.settings.hideChatButtonOnLoad = false;
-
-                // Inizializzazione Embedded Service
-                embeddedservice_bootstrap.init(
-                    '00DfZ0000006gNx', // Organization ID
-                    'Web', // Embedded Service Deployment Name
-                    'https://bitmobility--partial.sandbox.my.site.com/ESWWeb1761645243099', // Site URL
-                    {
-                        scrt2URL: 'https://bitmobility--partial.sandbox.my.salesforce-scrt.com'
-                    }
-                );
-
-                console.log('✅ Embedded Messaging inizializzato correttamente');
-            } catch (err) {
-                console.error('❌ Errore nel caricamento di Embedded Messaging:', err);
-            }
-        }
-
-        // Funzione opzionale per aprire la chat programmaticamente
-        function openChat() {
-            if (window.embeddedservice_bootstrap && window.embeddedservice_bootstrap.utilAPI) {
-                window.embeddedservice_bootstrap.utilAPI.launchChat();
-            } else {
-                console.warn('Chat non ancora disponibile');
-            }
-        }
-
-        // Event listener per quando la chat è pronta
-        window.addEventListener('onEmbeddedMessagingReady', function() {
-            console.log('🚀 Chat pronta all\'uso');
-        });
-    </script>
-
-    <!-- Caricamento bootstrap script -->
-    <script type='text/javascript' 
-            src='https://bitmobility--partial.sandbox.my.site.com/ESWWeb1761645243099/assets/js/bootstrap.min.js' 
-            onload='initEmbeddedMessaging()'>
-    </script>
-    <!-- ============================================ -->
-    <!-- Salesforce Embedded Messaging Snippet END   -->
-    <!-- ============================================ -->
-
+<!-- End Snippet Salesforce --> 
+  
 </body>
 </html>
