@@ -21,7 +21,7 @@
         embeddedservice_bootstrap.settings.prechatAPI = {
           setHiddenPrechatFields: function(form) {
             form.hiddenFields = Object.assign({}, form.hiddenFields, {
-              Codice_Cliente__c: codiceCliente    
+              codiceCliente: codiceCliente    
             });
             return form;
           }
