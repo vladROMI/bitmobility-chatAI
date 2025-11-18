@@ -1,61 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <title>Preview Agentforce</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            text-align: center;
-        }
-
-        .logo {
-            max-width: 250px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        .title {
-            font-size: 22px;
-            font-weight: bold;
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Preview Agentforce</title>
+  <style>
+    body { margin:0; padding:0; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; font-family:Arial,sans-serif; background:#f5f5f5; text-align:center; }
+    .logo { max-width:250px; height:auto; margin-bottom:20px; }
+    .title { font-size:22px; font-weight:bold; color:#333; }
+  </style>
 </head>
 <body>
-    <img src="https://pisajazz.it/wp-content/uploads/2024/10/bit-1-768x576.png" alt="Logo Azienda" class="logo">
-    <div class="title">TEST Agentforce</div>
+  <img src="https://pisajazz.it/wp-content/uploads/2024/10/bit-1-768x576.png" alt="Logo Azienda" class="logo">
+  <div class="title">TEST Agentforce</div>
 
-    <!-- Start Snippet Salesforce -->
-  <script type='text/javascript'>
+  <script>
     function initEmbeddedMessaging() {
-        try {
-            embeddedservice_bootstrap.settings.language = 'it'; 
-			embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({CodiceCliente__c: 'VLADTEST'});
-            embeddedservice_bootstrap.init(
-                '00DfZ0000006gNx',
-                'Web',
-                'https://bitmobility--partial.sandbox.my.site.com/ESWWeb1761645243099',
-                {
-                    scrt2URL: 'https://bitmobility--partial.sandbox.my.salesforce-scrt.com'
-                }
-            );
-        } catch (err) {
-            console.error('Error loading Embedded Messaging: ', err);
-        }
-    };
-</script>
-<script type='text/javascript' src='https://bitmobility--partial.sandbox.my.site.com/ESWWeb1761645243099/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-<!-- End Snippet Salesforce --> 
-  
+      try {
+        const codiceCliente = 'VLADTEST';           // qui puoi mettere il valore reale
+        embeddedservice_bootstrap.settings.language = 'it';
+        embeddedservice_bootstrap.settings.prechatAPI = {
+          setHiddenPrechatFields: function(form) {
+            form.hiddenFields = Object.assign({}, form.hiddenFields, {
+              Codice_Cliente__c: codiceCliente    
+            });
+            return form;
+          }
+        };
+        embeddedservice_bootstrap.init(
+          '00DfZ0000006gNx',
+          'Web',
+          'https://bitmobility--partial.sandbox.my.site.com/ESWWeb1761645243099',
+          { scrt2URL: 'https://bitmobility--partial.sandbox.my.salesforce-scrt.com' }
+        );
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+      }
+    }
+  </script>
+  <script src="https://bitmobility--partial.sandbox.my.site.com/ESWWeb1761645243099/assets/js/bootstrap.min.js"
+          onload="initEmbeddedMessaging()"></script>
 </body>
 </html>
