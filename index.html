@@ -14,18 +14,21 @@
   <div class="title">TEST Agentforce</div>
 
   <script>
+    const codiceCliente = 'VLADTEST'; // Valore dinamico
+    window.addEventListener("onEmbeddedMessagingReady", () => {
+      console.log("Agentforce Ready - Setting Hidden Fields");
+      try {
+        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+          "codiceCliente": codiceCliente
+        });
+      } catch (err) {
+        console.error("Errore nell'impostazione dei campi nascosti:", err);
+      }
+    });
     function initEmbeddedMessaging() {
       try {
-        const codiceCliente = 'VLADTEST';           // qui puoi mettere il valore reale
         embeddedservice_bootstrap.settings.language = 'it';
-        embeddedservice_bootstrap.settings.prechatAPI = {
-          setHiddenPrechatFields: function(form) {
-            form.hiddenFields = Object.assign({}, form.hiddenFields, {
-              codiceCliente: codiceCliente    
-            });
-            return form;
-          }
-        };
+        
         embeddedservice_bootstrap.init(
           '00DfZ0000006gNx',
           'Web',
@@ -37,6 +40,7 @@
       }
     }
   </script>
+  
   <script src="https://bitmobility--partial.sandbox.my.site.com/ESWWeb1761645243099/assets/js/bootstrap.min.js"
           onload="initEmbeddedMessaging()"></script>
 </body>
