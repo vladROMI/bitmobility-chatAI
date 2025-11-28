@@ -13,8 +13,8 @@
   <img src="https://pisajazz.it/wp-content/uploads/2024/10/bit-1-768x576.png" alt="Logo Azienda" class="logo">
   <div class="title">TEST Agentforce</div>
 
-  <script>
-    const codiceCliente = 'VLADTEST'; // Valore dinamico
+<script type='text/javascript'>
+   const codiceCliente = '662411'; // Valore dinamico
     window.addEventListener("onEmbeddedMessagingReady", () => {
       console.log("Agentforce Ready - Setting Hidden Fields");
       try {
@@ -25,23 +25,25 @@
         console.error("Errore nell'impostazione dei campi nascosti:", err);
       }
     });
-    function initEmbeddedMessaging() {
-      try {
-        embeddedservice_bootstrap.settings.language = 'it';
-        
-        embeddedservice_bootstrap.init(
-          '00DfZ0000006gNx',
-          'Web',
-          'https://bitmobility--partial.sandbox.my.site.com/ESWWeb1761645243099',
-          { scrt2URL: 'https://bitmobility--partial.sandbox.my.salesforce-scrt.com' }
-        );
-      } catch (err) {
-        console.error('Error loading Embedded Messaging: ', err);
-      }
-    }
-  </script>
-  
-  <script src="https://bitmobility--partial.sandbox.my.site.com/ESWWeb1761645243099/assets/js/bootstrap.min.js"
-          onload="initEmbeddedMessaging()"></script>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00Dbl000003yeIb',
+				'Web_DEMO',
+				'https://bitmobility.my.site.com/ESWWebDEMO1764328520579',
+				{
+					scrt2URL: 'https://bitmobility.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://bitmobility.my.site.com/ESWWebDEMO1764328520579/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 </body>
 </html>
+
+
